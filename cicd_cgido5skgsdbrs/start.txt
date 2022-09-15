@@ -1,0 +1,4 @@
+cloudgoat_output_access_key_id = AKIAYVOEROQZ3B5BZQHB
+cloudgoat_output_api_url = https://ir6i5i53fh.execute-api.us-east-1.amazonaws.com/prod
+cloudgoat_output_aws_account_id = 595802027059
+cloudgoat_output_secret_access_key = ltqCwAVWCFtGeAShobtF7GOHwx71idbQ9Da6HLVu

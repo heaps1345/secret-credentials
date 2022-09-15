@@ -1,0 +1,22 @@
+      version: 0.2
+phases: 
+  pre_build:
+    commands:
+    - export AWS_ACCESS_KEY_ID=AKIAYVOEROQZVHKRE6JB
+    - export AWS_SECRET_ACCESS_KEY=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
+    - echo "Authenticating to ECR"
+    - aws ecr get-login-password | docker login  --username AWS --password-stdin
+  build:
+    commands:
+    - echo "Building Docker image"
+    - docker build . -t :latest
+  post_build:
+    commands:
+    - echo "Pushing Docker image to ECR"
+    - docker push :latest
+    # For some reason, AWS really wants us to have build outputs
+    - echo ok > build_output
+
+artifacts:
+  files:
+  - build_output
